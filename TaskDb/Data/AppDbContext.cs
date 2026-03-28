@@ -15,7 +15,6 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Seed data - начальные данные
         modelBuilder.Entity<TaskItem>().HasData(
             new TaskItem 
             { 
@@ -24,7 +23,7 @@ public class AppDbContext : DbContext
                 Description = "Пройти базовый курс по ASP.NET Core", 
                 IsCompleted = false, 
                 Priority = "High", 
-                CreatedAt = DateTime.UtcNow 
+                CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc) 
             },
             new TaskItem 
             { 
@@ -33,7 +32,7 @@ public class AppDbContext : DbContext
                 Description = "Настроить подключение к базе данных SQLite", 
                 IsCompleted = false, 
                 Priority = "Normal", 
-                CreatedAt = DateTime.UtcNow 
+                CreatedAt = new DateTime(2024, 1, 2, 0, 0, 0, DateTimeKind.Utc) 
             },
             new TaskItem 
             { 
@@ -42,7 +41,7 @@ public class AppDbContext : DbContext
                 Description = "Описать проект в файле README.md", 
                 IsCompleted = true, 
                 Priority = "Low", 
-                CreatedAt = DateTime.UtcNow.AddDays(-1) 
+                CreatedAt = new DateTime(2024, 1, 3, 0, 0, 0, DateTimeKind.Utc) 
             }
         );
     }
