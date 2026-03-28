@@ -20,4 +20,5 @@ public class TaskItem
     [MaxLength(20)]
     public string Priority {get; set; } = "Normal";
     
+    public DateTime? DueDate {get; set;}
 }
